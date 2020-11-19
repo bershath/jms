@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jms-web" />
+        <module name="jms-vanilla" />
+        <module name="jms-ear" />
+        <module name="jms-ejb" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jms" target="1.8" />
+      <module name="jms-ear" target="1.8" />
+      <module name="jms-ejb" target="1.8" />
+      <module name="jms-vanilla" target="1.8" />
+      <module name="jms-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,4 @@
+org/jboss/labs/jms/ejb/MessageSender.class
+org/jboss/labs/jms/ejb/MessageSenderBeanRemote.class
+org/jboss/labs/jms/ejb/MessageSenderBeanLocal.class
+org/jboss/labs/jms/ejb/MessageSenderBean.class

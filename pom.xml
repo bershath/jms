@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.jboss.labs</groupId>
+  <artifactId>jms</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>jms</name>
+  <modules>
+  	<module>jms-ear</module>
+  	<module>jms-ejb</module>
+  	<module>jms-web</module>
+  	<module>jms-vanilla</module>
+  </modules>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>org.jboss.labs.jms.ejb</groupId>
+	  		<artifactId>jms-ejb</artifactId>
+	  		<version>0.0.1-SNAPSHOT</version>
+	  		<type>ejb</type>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.jboss.labs.jms.vanilla</groupId>
+	  		<artifactId>jms-vanilla</artifactId>
+	  		<version>0.0.1-SNAPSHOT</version>
+	  		<type>jar</type>
+  		</dependency>
+  		<dependency>
+  			<groupId>org.jboss.labs.jms.web</groupId>
+	  		<artifactId>jms-web</artifactId>
+	  		<version>0.0.1-SNAPSHOT</version>
+	  		<type>war</type>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+  <build>
+  	<plugins>
+  		<!--  plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-ear-plugin</artifactId>
+  			<version>2.10.1</version>
+  			 <configuration>
+  			        <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <fileNameMapping>no-version</fileNameMapping>
+                </configuration>
+  		</plugin -->
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<version>3.6.1</version>
+  			<configuration>
+          		<source>1.8</source>
+          		<target>1.8</target>
+        	</configuration>
+  		</plugin>
+  		
+      <plugin>
+      <artifactId>maven-antrun-plugin</artifactId>
+      <version>1.8</version>
+      <executions>
+        <execution>
+          <id>copy</id>
+          <phase>deploy</phase>
+          <configuration>
+            <target>
+              <copy file="/home/bershath/apps/workspaces/jbds/jms/jms/jms-ear/target/jms-ear.ear" tofile="/home/bershath/apps/jboss/7/jboss-eap-7.2.2/standalone/deployments/jms-ear.ear"/>
+            </target>
+          </configuration>
+          <goals>
+            <goal>run</goal>
+          </goals>
+        </execution> 
+      </executions>
+    </plugin>
+  	</plugins>
+  </build>
+</project>
